@@ -11800,11 +11800,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Eleo\\source\\repos\\Solar Panels\\Solar Panels\\Solar Panels.csproj",
+      "projectUniqueName": "D:\\Documents_D\\Solar Panels\\Solar-panels\\Solar Panels\\Solar Panels\\Solar Panels.csproj",
       "projectName": "Solar Panels",
-      "projectPath": "C:\\Users\\Eleo\\source\\repos\\Solar Panels\\Solar Panels\\Solar Panels.csproj",
+      "projectPath": "D:\\Documents_D\\Solar Panels\\Solar-panels\\Solar Panels\\Solar Panels\\Solar Panels.csproj",
       "packagesPath": "C:\\Users\\Eleo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Eleo\\source\\repos\\Solar Panels\\Solar Panels\\obj\\",
+      "outputPath": "D:\\Documents_D\\Solar Panels\\Solar-panels\\Solar Panels\\Solar Panels\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
