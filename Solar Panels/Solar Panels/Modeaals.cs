@@ -8,7 +8,7 @@ namespace Solar_Panels
     enum StationType {SolarStation, WindTurbine}
     enum UserType {user }
     enum WindDirection { n,s,w,e, ns,nw,es,ew}
-public class Models
+public class Modeaals
     {
         
         class UserData
