@@ -20,5 +20,15 @@ namespace GreenGo.DB.API
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>();
+
+        // var hostingUrlPrefixes = new[] { "portal/api/license" };
+        //
+        //     return WebHost
+        //     .CreateDefaultBuilder(args)
+        //     .ConfigureAppConfiguration(ApplicationConfiguration.Apply)
+        //     .UseCoreLibrariesAspNetCoreHosting(hostingUrlPrefixes)
+        //     .UseStartup<Startup>()
+        //     .UseSetting(WebHostDefaults.ApplicationKey, typeof(LicensePortalWebHostCreator).Assembly.FullName);
+
     }
 }

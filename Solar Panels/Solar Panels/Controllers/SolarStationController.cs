@@ -2,46 +2,61 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GreenGo.DB.API.Entities;
+using GreenGo.DB.API.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GreenGo.DB.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class SolarStationController
+    public class SolarStationController:ControllerBase
     {
-        // GET api/values
+        private readonly IDbRepository _dbRepository;
+
+        public SolarStationController(IDbRepository dbRepository)
+        {
+            _dbRepository = dbRepository ?? throw new ArgumentNullException(nameof(dbRepository));
+        }
+        
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public IActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            return Ok("You got solar stations static info");
         }
-
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        
+        [HttpGet("{ssId}")]
+        public IActionResult Get(Guid ssId)
         {
-            return new ActionResult<string>("Solar station by id "+id);
-        }
+            var solarStationEntity = _dbRepository.GetSolarStation(ssId);
 
-        // POST api/values
+            return Ok(solarStationEntity);
+        }
+        
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IActionResult Post([FromBody] string value)
         {
+            var solarStation = new SolarStation();
+            var solarStationId = _dbRepository.AddSolarStation(solarStation);
 
+            return Ok(solarStationId);
         }
-
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        
+        [HttpPut("{ssId}")]
+        public IActionResult Put(Guid ssId, [FromBody] string value)
         {
+            var solarStationId = _dbRepository.PutSolarStation(ssId, value);
 
+            return Ok(solarStationId);
         }
-
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        
+        [HttpDelete("{ssId}")]
+        public IActionResult Delete(Guid ssId)
         {
+            var isDeletingSuccess = _dbRepository.RemoveInverter(ssId);
+
+            return isDeletingSuccess ?
+                (ActionResult)Ok(ssId) : (ActionResult)BadRequest(ssId);
         }
     }
 }
