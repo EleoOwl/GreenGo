@@ -3,15 +3,17 @@ using System;
 using GreenGo.DB.API.DBContexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace GreenGo.DB.API.Migrations
 {
     [DbContext(typeof(PanelsContext))]
-    partial class PanelsContextModelSnapshot : ModelSnapshot
+    [Migration("20201217232200_OVER_LAST_MIGRATION_A")]
+    partial class OVER_LAST_MIGRATION_A
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

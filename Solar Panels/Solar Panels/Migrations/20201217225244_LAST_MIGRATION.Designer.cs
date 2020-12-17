@@ -3,15 +3,17 @@ using System;
 using GreenGo.DB.API.DBContexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace GreenGo.DB.API.Migrations
 {
     [DbContext(typeof(PanelsContext))]
-    partial class PanelsContextModelSnapshot : ModelSnapshot
+    [Migration("20201217225244_LAST_MIGRATION")]
+    partial class LAST_MIGRATION
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,9 +37,8 @@ namespace GreenGo.DB.API.Migrations
                     b.ToTable("Inverters");
 
                     b.HasData(
-                        new { Id = new Guid("15f8c53b-e896-4c7f-891b-31393cd1736d"), Company = "not THE BEST COMPANY", Power = 24.0, Price = 8000.0 },
-                        new { Id = new Guid("98c1c7d6-3afc-4ae9-9b0b-6c270676e65b"), Company = "THE BEST COMPANY", Power = 45.0, Price = 10000.0 },
-                        new { Id = new Guid("1f08fc57-42e4-4af1-9409-1a92d3318980"), Company = "THE BEST COMPANY", Power = 45.0, Price = 10000.0 }
+                        new { Id = new Guid("92a42ce5-f8e0-4eb5-925f-8fb654d7bae5"), Company = "not THE BEST COMPANY", Power = 24.0, Price = 8000.0 },
+                        new { Id = new Guid("f563340f-2340-45df-b4df-de0903d960ea"), Power = 0.0, Price = 0.0 }
                     );
                 });
 
@@ -83,7 +84,7 @@ namespace GreenGo.DB.API.Migrations
                     b.ToTable("ReferenceTables");
 
                     b.HasData(
-                        new { Id = new Guid("2112e773-d5ad-4f34-a129-2271d84f3a1d"), IdPanel = new Guid("2902b665-1190-4c70-9915-b9c2d7680450"), IdStation = new Guid("5de324e0-203d-4478-8fb2-e19d686500eb") }
+                        new { Id = new Guid("ecf86545-e36d-462e-afdd-c2d88a06f276"), IdPanel = new Guid("102b566b-ba1f-404c-b2df-e2cde39ade09"), IdStation = new Guid("102b566b-ba1f-404c-b2df-e2cde39ade12") }
                     );
                 });
 
@@ -99,9 +100,7 @@ namespace GreenGo.DB.API.Migrations
                     b.ToTable("SolarStations");
 
                     b.HasData(
-                        new { Id = new Guid("5de324e0-203d-4478-8fb2-e19d686500eb"), IdInverter = new Guid("15f8c53b-e896-4c7f-891b-31393cd1736d") },
-                        new { Id = new Guid("d5db0978-13b6-4ba6-a20a-777de3d9b660"), IdInverter = new Guid("98c1c7d6-3afc-4ae9-9b0b-6c270676e65b") },
-                        new { Id = new Guid("c8e840fc-f108-4a75-bff6-099d7f979bd0"), IdInverter = new Guid("1f08fc57-42e4-4af1-9409-1a92d3318980") }
+                        new { Id = new Guid("102b566b-ba1f-404c-b2df-e2cde39ade12"), IdInverter = new Guid("00000000-0000-0000-0000-000000000000") }
                     );
                 });
 
@@ -125,12 +124,6 @@ namespace GreenGo.DB.API.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("WindTurbines");
-
-                    b.HasData(
-                        new { Id = new Guid("fcee8747-7253-4fd5-a89f-2d37fc4ec079"), Company = "Wind company", Diameter = 0.0, Price = 100000.0, defPower = 0.0, numBlades = 0 },
-                        new { Id = new Guid("07681fb5-983a-440d-9384-8cf01ef41c87"), Company = "Summer breeeze", Diameter = 0.0, Price = 220000.0, defPower = 0.0, numBlades = 0 },
-                        new { Id = new Guid("bfa2c8ac-3f83-4381-9ab0-fe8a834aab72"), Company = "Nice barrey", Diameter = 0.0, Price = 1001324.0, defPower = 0.0, numBlades = 0 }
-                    );
                 });
 #pragma warning restore 612, 618
         }

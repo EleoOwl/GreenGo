@@ -12,8 +12,10 @@ namespace GreenGo.DB.API.Entities
         [Key]
         public Guid Id { get; set; }
 
+       
         public List<Panel> Panels;
 
+        public Guid IdInverter { get; set; }
         public Inverter Inverter;
     }
 }
