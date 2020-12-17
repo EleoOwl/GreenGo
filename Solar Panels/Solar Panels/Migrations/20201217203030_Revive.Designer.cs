@@ -3,20 +3,22 @@ using System;
 using GreenGo.DB.API.DBContexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace GreenGo.DB.API.Migrations
 {
     [DbContext(typeof(PanelsContext))]
-    partial class PanelsContextModelSnapshot : ModelSnapshot
+    [Migration("20201217203030_Revive")]
+    partial class Revive
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn)
-                .HasAnnotation("ProductVersion", "2.1.14-servicing-32113")
+                .HasAnnotation("ProductVersion", "2.1.11-servicing-32099")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             modelBuilder.Entity("GreenGo.DB.API.Entities.Inverter", b =>
@@ -35,8 +37,8 @@ namespace GreenGo.DB.API.Migrations
                     b.ToTable("Inverters");
 
                     b.HasData(
-                        new { Id = new Guid("abd086ce-9949-478e-9115-a1eabb24b799"), Power = 0.0, Price = 0.0 },
-                        new { Id = new Guid("edfa3244-14dd-4ab0-8357-a8c70b956299"), Power = 0.0, Price = 0.0 }
+                        new { Id = new Guid("eeb5c5f4-7a88-481f-81eb-2e62abe83b96"), Power = 0.0, Price = 0.0 },
+                        new { Id = new Guid("7dcf1e76-6bd6-4fb7-8647-91f5497ac233"), Power = 0.0, Price = 0.0 }
                     );
                 });
 
@@ -82,7 +84,7 @@ namespace GreenGo.DB.API.Migrations
                     b.ToTable("ReferenceTables");
 
                     b.HasData(
-                        new { Id = new Guid("7b77955c-17e8-42a5-bc91-2406b5a1dea9"), IdInverter = new Guid("0263a551-f3fe-4b9b-9cb0-4d25008ca057"), IdStation = new Guid("d7306d10-f41f-420d-8194-a7d5dbe9216f") }
+                        new { Id = new Guid("26a2242a-659d-4158-ac39-fdbd29c576e2"), IdInverter = new Guid("f29d507a-b388-4cf3-8659-a3ee30e31ac6"), IdStation = new Guid("e8653222-a6ba-421c-824b-40ec0b642d2a") }
                     );
                 });
 
@@ -96,7 +98,7 @@ namespace GreenGo.DB.API.Migrations
                     b.ToTable("SolarStations");
 
                     b.HasData(
-                        new { Id = new Guid("5499038b-1e18-48ea-9fd0-1a61f97a727e") }
+                        new { Id = new Guid("17046f99-fdb3-437b-ae20-cc39dd7ee12e") }
                     );
                 });
 

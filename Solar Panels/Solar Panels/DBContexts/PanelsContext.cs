@@ -18,7 +18,8 @@ namespace GreenGo.DB.API.DBContexts
         public DbSet<Inverter> Inverters { get; set; }
         public DbSet<SolarStation> SolarStations { get; set; }
         public DbSet<WindTurbine> WindTurbines { get; set; }
-
+        public DbSet<ReferenceTables> ReferenceTables { get; set; }
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // seed the database with dummy data
@@ -64,7 +65,16 @@ namespace GreenGo.DB.API.DBContexts
             modelBuilder.Entity<SolarStation>().HasData(
                 new SolarStation { Id = Guid.NewGuid()}
                 );
-             base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Inverter>().HasData(
+                new Inverter { Id = Guid.NewGuid() }
+                );
+            modelBuilder.Entity<ReferenceTables>().HasData(
+                new ReferenceTables {Id = Guid.NewGuid(), IdInverter = Guid.NewGuid(), IdStation = Guid.NewGuid() }
+                );
+            modelBuilder.Entity<Inverter>().HasData(
+                new Inverter { Id = Guid.NewGuid() }
+                );
+            base.OnModelCreating(modelBuilder);
         }
     }
 
