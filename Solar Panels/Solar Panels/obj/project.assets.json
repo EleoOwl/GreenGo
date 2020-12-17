@@ -12622,11 +12622,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Documents_D\\GreenGo\\G2\\Working(a_bit)\\Solar Panels\\Solar Panels\\GreenGo.DB.API.csproj",
+      "projectUniqueName": "D:\\Documents_D\\GreenGo\\GreenGo\\Solar Panels\\Solar Panels\\GreenGo.DB.API.csproj",
       "projectName": "GreenGo.DB.API",
-      "projectPath": "D:\\Documents_D\\GreenGo\\G2\\Working(a_bit)\\Solar Panels\\Solar Panels\\GreenGo.DB.API.csproj",
+      "projectPath": "D:\\Documents_D\\GreenGo\\GreenGo\\Solar Panels\\Solar Panels\\GreenGo.DB.API.csproj",
       "packagesPath": "C:\\Users\\Eleo\\.nuget\\packages\\",
-      "outputPath": "D:\\Documents_D\\GreenGo\\G2\\Working(a_bit)\\Solar Panels\\Solar Panels\\obj\\",
+      "outputPath": "D:\\Documents_D\\GreenGo\\GreenGo\\Solar Panels\\Solar Panels\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

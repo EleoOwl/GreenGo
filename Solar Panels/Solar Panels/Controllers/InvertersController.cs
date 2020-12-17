@@ -23,8 +23,14 @@ namespace GreenGo.DB.API.Controllers
         {
             _dbRepository = dbRepository?? throw new ArgumentNullException(nameof(DbRepository));
         }
-        
-        
+
+        [HttpGet]
+        public IActionResult Get()
+        {
+            var inverterEntities = _dbRepository.GetInverters();
+
+            return Ok(inverterEntities);
+        }
         [HttpGet("{inverterId}")]
         public IActionResult Get(Guid inverterId)
         {

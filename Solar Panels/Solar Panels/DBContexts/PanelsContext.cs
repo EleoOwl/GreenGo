@@ -64,8 +64,6 @@ namespace GreenGo.DB.API.DBContexts
             modelBuilder.Entity<SolarStation>().HasData(
                 new SolarStation { Id = Guid.NewGuid()}
                 );
- 
-
              base.OnModelCreating(modelBuilder);
         }
     }

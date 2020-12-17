@@ -16,7 +16,10 @@ namespace GreenGo.DB.API.Services
             _context = context ?? throw new ArgumentNullException();
         }
 
-
+        public IEnumerable<Panel> GetPanels()
+        {
+            return _context.Panels;
+        }
         public Panel GetPanel(Guid panelId)
         {
             if (panelId == Guid.Empty)
@@ -57,6 +60,11 @@ namespace GreenGo.DB.API.Services
         public Panel PutPanel(Guid panelId, string value)
         {
             throw new NotImplementedException();
+        }
+
+        public IEnumerable<Inverter> GetInverters()
+        {
+            return _context.Inverters;
         }
 
         public Inverter GetInverter(Guid inverterId)
@@ -100,6 +108,12 @@ namespace GreenGo.DB.API.Services
                 throw new Exception("troubles");
             }
         }
+
+        public IEnumerable<SolarStation> GetSolarStations()
+        { 
+            return _context.SolarStations;
+        }
+
         public SolarStation GetSolarStation(Guid solarStationId)
         {
             if (solarStationId == Guid.Empty)
@@ -139,6 +153,11 @@ namespace GreenGo.DB.API.Services
             {
                 throw new Exception("troubles");
             }
+        }
+
+        public IEnumerable<WindTurbine> GetWindTurbines()
+        {
+            return _context.WindTurbines;
         }
 
         public WindTurbine GetWindTurbine(Guid WindTurbineId)

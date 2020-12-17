@@ -27,7 +27,15 @@ namespace GreenGo.DB.API.Controllers
         {
             _dbRepository = dbRepository ?? throw new ArgumentNullException(nameof(DbRepository));
         }
-        
+
+        [HttpGet]
+        public IActionResult Get()
+        {
+            var panelEntities = _dbRepository.GetPanels();
+
+            return Ok(panelEntities);
+        }
+
         [HttpGet("{panelId}")]
         public IActionResult Get(Guid panelId)
         {

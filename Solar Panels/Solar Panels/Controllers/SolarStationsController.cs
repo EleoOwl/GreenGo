@@ -10,11 +10,11 @@ namespace GreenGo.DB.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class SolarStationController:ControllerBase
+    public class SolarStationsController:ControllerBase
     {
         private readonly IDbRepository _dbRepository;
 
-        public SolarStationController(IDbRepository dbRepository)
+        public SolarStationsController(IDbRepository dbRepository)
         {
             _dbRepository = dbRepository ?? throw new ArgumentNullException(nameof(dbRepository));
         }
@@ -22,7 +22,9 @@ namespace GreenGo.DB.API.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok("You got solar stations static info");
+            var solarStationEntities = _dbRepository.GetSolarStations();
+
+            return Ok(solarStationEntities);
         }
         
         [HttpGet("{ssId}")]

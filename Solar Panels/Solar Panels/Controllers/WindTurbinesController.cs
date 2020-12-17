@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace GreenGo.DB.API.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class WindTurbinesController : ControllerBase
     {
 
@@ -21,7 +23,9 @@ namespace GreenGo.DB.API.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok("You got wind turbine static info");
+            var windTurbineEntities = _dbRepository.GetWindTurbines();
+
+            return Ok(windTurbineEntities);
         }
 
         [HttpGet("{ssId}")]
